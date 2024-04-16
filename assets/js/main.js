@@ -21,6 +21,34 @@ button1.addEventListener("click", function () {
 });
 
 const button2 = document.getElementById("toggleButton2");
+
+
+function validateForm() {
+    var name = document.forms["myForm"]["name"].value;
+    var email = document.forms["myForm"]["email"].value;
+    var phone = document.forms["myForm"]["phone"].value;
+            
+    if (name === "") {
+        alert("please enter name");
+        return false;
+    }
+        
+    var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (!email.match(emailRegex)) {
+        alert("please enter email.");
+        return false;
+    }
+    
+    var phoneRegex = /^\d{11}$/;
+    if (!phone.match(phoneRegex)) {
+        alert("please enter phone.");
+        return false;
+    }
+
+   
+}
+
+
 const div2 = document.getElementById("myDiv2");
 
 button2.addEventListener("click", function () {
